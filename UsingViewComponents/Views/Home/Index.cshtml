@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Product>
+
+@{ 
+    Layout = "_Layout";
+    ViewData["Title"] = "Products";
+ }
+
+<table class="table table-sm table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prod in Model) 
+        {
+            <tr>
+                <td>@prod.Name</td>
+                <td>@prod.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create" class="btn btn-primary">Create</a>
+
